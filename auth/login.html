@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Gestão Clínica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/modern-style.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css" />
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="text-center mb-4" style="color: #003366; font-weight: 700;">Gestão Clínica</h2>
+            <form id="loginForm" novalidate>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="material-icons">email</i></span>
+                        <input type="email" class="form-control" id="email" value="teste@example.com" required />
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Senha</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="material-icons">lock</i></span>
+                        <input type="password" class="form-control" id="password" value="password" required />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"><i class="material-icons">login</i>Entrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="../assets/js/auth.js"></script>
+    <script>
+        // Lógica de login específica da página
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (login(email, password)) {
+                window.location.href = '../index.html';
+            } else {
+                alert('Credenciais inválidas.');
+            }
+        });
+    </script>
+</body>
+</html>

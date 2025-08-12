@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Exame - Gestão Clínica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/modern-style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">Gestão Clínica</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/clientes/list.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/medicos/list.html">Médicos</a></li>
+                </ul>
+                <button class="btn btn-outline-light" onclick="logout()"><i class="material-icons">logout</i>Sair</button>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">Novo Agendamento</div>
+                    <div class="card-body p-4">
+                        <form id="schedule-form" onsubmit="handleScheduleSubmit(event)">
+                            <div class="mb-4"><label for="client-id" class="form-label">Paciente</label><select id="client-id" class="form-select" required><option value="">Selecione...</option></select></div>
+                            <div class="mb-4"><label for="medic-id" class="form-label">Médico</label><select id="medic-id" class="form-select" required><option value="">Selecione...</option></select></div>
+                            <div class="mb-4"><label for="exam-id" class="form-label">Exame</label><select id="exam-id" class="form-select" required><option value="">Selecione...</option></select></div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4"><label for="scheduled-date" class="form-label">Data</label><input type="date" id="scheduled-date" class="form-control" required></div>
+                                <div class="col-md-6 mb-4"><label for="scheduled-time" class="form-label">Hora</label><input type="time" id="scheduled-time" class="form-control" required></div>
+                            </div>
+                            <div class="text-end">
+                                <a href="/index.html" class="btn btn-secondary me-2"><i class="material-icons">cancel</i>Cancelar</a>
+                                <button type="submit" class="btn btn-primary"><i class="material-icons">check_circle</i>Confirmar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-3"><p class="mb-0">&copy; 2025 Gestão Clínica.</p></footer>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

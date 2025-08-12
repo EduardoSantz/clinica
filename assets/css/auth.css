@@ -1,0 +1,26 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003366;
+    background-image: linear-gradient(to right top, #003366, #004a8d, #0063b5, #007ddf, #0099ff);
+}
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.login-card .form-control, .login-card .btn {
+    height: 50px;
+}
+.login-card .input-group-text {
+    background-color: transparent;
+    border-right: none;
+}
+.login-card .form-control {
+    border-left: none;
+}
